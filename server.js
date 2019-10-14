@@ -6,7 +6,7 @@ var exphbs = require('express-handlebars');
 var routes = require('./controllers/burgers_controller.js');
 
 var app = express();
-var PORT = process.env.PORT || 3002;
+var PORT = process.env.PORT || 3000;
 
 //Serve static content for the app from the "public" directory in the application directory.
 app.use('/static', express.static(__dirname + '/public'));
