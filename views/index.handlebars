@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+
+    <h1>Burgers</h1>
+    <div class="col-sm-4">
+
+      <h2>Burgers NOM!</h2>
+
+        <ul>
+          {{#each burgers}}
+            {{#unless this.devoured}}
+              <li>
+                {{this.burger_name}}
+
+                <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="devoured" value="1">
+                  <button class="btn" type="submit">NOM!</button>
+                </form>
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+
+    {{!-- <div class="col-sm-4">
+      <h2>In the gut</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li>
+              {{this.burger_name}}
+
+              <form action="burgers/delete/{{this.id}}?_method=DELETE" method="DELETE">
+                <input type="hidden" name="devoured" value="1">
+                <button class="btn" type="submit">Down the flusher ye go!</button>
+              </form>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div> --}}
+
+    {{!-- <div class="col-sm-4">
+      <h2>In the gut</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li>
+              {{this.burger_name}}
+
+              <form class="delete-update-form" action="burgers/delete" method="DELETE">
+                <input type="hidden" name="devoured" value="1">
+                <button class="btn" type="submit">Down the flusher ye go!</button>
+              </form>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div> --}}
+
+    <div class="col-sm-4">
+      <h2>In the gut</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li>
+              {{this.burger_name}}
+
+              <form class="delete-update-form" action="burgers/delete" method="DELETE">
+                <input type="hidden" name="devoured" value="1">
+                <button class="btn delete-burger" type="submit" data-id="{{this.id}}">Down the flusher ye go</button>
+              </form>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    
+
+    <div class="col-sm-4">
+      <h2>Add a Burger</h2>
+      <form class="create-update-form" action="burgers/create" method="POST">
+
+        <div class="form-group">
+          <label for="bu">Burger Name:</label>
+          <input type="text" id="bu" name="burger_name">
+        </div>
+
+        <button type="submit" name="devoured" value="0" class="btn btn-primary">Add Burger</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
