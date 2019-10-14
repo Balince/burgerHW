@@ -1,12 +1,12 @@
 {
-  "name": "eat-a-burger",
+  "name": "burgerHW",
   "version": "1.0.0",
-  "description": "Modify a database of burgers",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Michelle Hettinger",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
